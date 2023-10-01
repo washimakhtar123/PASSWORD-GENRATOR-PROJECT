@@ -1,0 +1,228 @@
+*,
+*::before
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartn',sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(0, 255, 235, 1) 0%, rgba(7, 58, 187, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+
+.container{
+    width: 90%;
+    max-width: 450px;
+}
+h1{
+    color: var(--pl-white);
+    opacity: 0.75;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.display_container{
+    position: relative;
+    background-color: darkviolet;
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid   salmon;
+    margin: 1rem;
+    padding-top: 0.35rem;
+}
+.display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem;
+    color: yellow;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25em; 
+    border: none;
+}
+
+.display::placeholder{
+    position: absolute;
+    top:50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: yellow;
+    opacity: 0.65;
+    text-transform: uppercase;
+}
+
+.display_container button{
+    position: absolute;
+    top: 50%;
+    right:1.5rem;
+    transform: translateY(-50%);
+
+}
+
+.input-container{
+    width:85%;
+    background-color: darkviolet;
+    border-radius: 1rem;
+    padding: 2rem;
+
+}
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.length-container p:nth-child(1){
+    color: white;
+    font-size: 1.5rem;
+}
+.length-container p:nth-child(2){
+    color: yellow;
+    font-size: 1.5rem;
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color: wheat;
+    font-size: 1.5rem;
+}
+
+.indicator{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generateButton{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: blue;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid salmon;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.25rem;
+
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    gap: 0 1rem;
+}
+.check input{
+ /* appearance ka matlab hota hai ki browser ka default setting nhi chahiyea; */
+    appearance: none;   
+    width:20px;
+    height: 20px;
+    border: 2px solid  black;
+    background-color: cyan;
+    cursor: pointer;
+    position: relative;
+    border-radius:0.35rem ;
+
+}
+.check input:checked::before{
+    content: '✔';
+    position: absolute;
+    color:blue;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top:-10px;
+    transform: translateX(-50%) translateY(40%);
+
+}
+.check label{
+    color: white;
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+
+}
+.copybtn{
+    background-color: transparent;
+    border: none;
+}
+
+.tooltip{
+    position: absolute;
+    background-color: black;
+    color: yellow;
+    font-size: 1.25rem;
+    top: -35px;
+    left:-25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+
+}
+.tooltip.active{
+    opacity: 1;
+    transform: scale(1);
+}
+.slider{
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: violet;
+    border-radius:1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradien(90deg, rgba(255, 255, 0, 1) 0%, rgba(140, 54, 140, 1) 0%);
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+}
+.slider::-webkit-slider-thumb{
+    position: relative;
+   
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61 ,0.50);
+    transition: all 100ms ease-in;
+
+
+}
+
+.slider:focus{
+    outline: 3px solid yellow;
+}
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px  solid yellow;
+    background-color: black;
+    box-shadow:rgba(255,229,61 ,0.80); 
+   
+}
